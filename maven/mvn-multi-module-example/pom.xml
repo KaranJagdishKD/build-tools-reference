@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.mycompany.app</groupId>
+  <artifactId>mvn-multi-module-example</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>mvn-multi-module-example</name>
+  <modules>
+    <module>my-service-1</module>
+    <module>my-service-2</module>
+  </modules>
+    
+  
+  <properties>
+    <spring-boot.version>2.6.1</spring-boot.version>
+    <spring-security.version>5.6.0</spring-security.version>
+  </properties>
+    
+  
+  
+  <dependencyManagement>
+    <dependencies>
+      <!-- Added logging dependencies to prevent nested dependencies using an older vulnerable version -->
+        		
+      <dependency>  
+        <groupId>org.springframework.boot</groupId>  
+        <artifactId>spring-boot-starter-logging</artifactId>
+        <version>${spring-boot.version}</version>
+      </dependency>
+              
+      <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-api -->
+      		
+      <dependency>
+        <groupId>org.apache.logging.log4j</groupId>
+        <artifactId>log4j-api</artifactId>
+        <version>2.17.0</version>
+      </dependency>
+      		
+      <dependency>  
+        <groupId>org.springframework.boot</groupId>  
+        <artifactId>spring-boot-loader-tools</artifactId>
+        <version>${spring-boot.version}</version>
+      </dependency>
+              
+      <dependency>
+        <groupId>org.springframework.boot</groupId>  
+        <artifactId>spring-boot-starter-actuator</artifactId>
+        <version>${spring-boot.version}</version>
+      </dependency>
+              
+      <dependency>
+        <groupId>org.springframework.boot</groupId>  
+        <artifactId>spring-boot-starter-data-jpa</artifactId>
+        <version>${spring-boot.version}</version>
+      </dependency>
+              
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-logging</artifactId>
+        <version>${spring-boot.version}</version>
+      </dependency>
+              
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-security</artifactId>
+        <version>${spring-boot.version}</version>
+      </dependency>
+              
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-web</artifactId>
+        <version>${spring-boot.version}</version>
+      </dependency>
+              
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-test</artifactId>
+        <version>${spring-boot.version}</version>
+      </dependency>
+              
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-test</artifactId>
+        <version>${spring-boot.version}</version>
+      </dependency>
+              
+      <dependency>
+        <groupId>org.springframework.security</groupId>
+        <artifactId>spring-security-test</artifactId>
+        <version>${spring-security.version}</version>
+      </dependency>
+        	
+    </dependencies>
+      
+  </dependencyManagement>
+    
+
+</project>
